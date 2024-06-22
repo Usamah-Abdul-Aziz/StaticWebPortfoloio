@@ -148,12 +148,12 @@ footer .socials a img:hover {
         height: 120px;
     }
 
-    #hero h2 {
-        font-size: 2rem;
+    .education {
+        flex-basis: calc(50% - 2rem);
     }
 
-    #hero p {
-        font-size: 1rem;
+    #education h2 {
+        font-size: 2rem;
     }
 
     .container {
@@ -176,12 +176,12 @@ footer .socials a img:hover {
         height: 100px;
     }
 
-    #hero h2 {
-        font-size: 1.5rem;
+    .education {
+        flex-basis: 100%;
     }
 
-    #hero p {
-        font-size: 0.9rem;
+    #education h2 {
+        font-size: 1.5rem;
     }
 
     .container {
@@ -189,63 +189,116 @@ footer .socials a img:hover {
     }
 }
 
-#hero {
+#education {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
     padding: 4rem 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: #fff;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
 }
 
-#hero h2 {
+#education h2 {
     font-size: 2.5rem;
+    margin-bottom: 2rem;
     color: #00f5ff;
+    position: relative;
+    z-index: 1;
     text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 30px #00f5ff;
+    
 }
 
-#hero p {
-    font-size: 1.2rem;
+.education-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.education {
+    background-color: rgba(20, 20, 50, 0.85);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    flex-basis: calc(33.333% - 2rem);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #00ffea;
+    position: relative;
+}
+
+.education::before, .education::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.education::before {
+    background: linear-gradient(45deg, rgba(0, 255, 234, 0.5), transparent);
+}
+
+.education::after {
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 234, 0.5));
+    filter: blur(20px);
+}
+
+.education:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.img-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.education img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.education h3 {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #00ffea;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.education p {
+    font-size: 1rem;
     color: #f3e600;
 }
 
-#hero .btn {
-    background-color: #6a00ff;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
+.education .btn {
     display: inline-block;
     margin-top: 1rem;
-    animation: glitch 4s ease infinite;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #00ffea;
+    color: #00ffea;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#hero .btn:hover {
-    background-color: #00b8ff;
-    transform: translateY(-3px);
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-@keyframes glitch {
-    0% {
-        text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #ff00ff;
-    }
-    20% {
-        text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffea;
-    }
-    40% {
-        text-shadow: 2px -2px 0px #00ffea, -2px 2px 0px #ff00ff;
-    }
-    60% {
-        text-shadow: -2px 2px 0px #ff00ff, 2px -2px 0px #00ffea;
-    }
-    80% {
-        text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #ff00ff;
-    }
-    100% {
-        text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffea;
-    }
+.education .btn:hover {
+    background-color: #00ffea;
+    color: #000000;
 }

@@ -118,28 +118,93 @@ main {
     padding: 2rem 0;
 }
 
-footer {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-    color: #f3e600;
-    padding: 1rem 0;
+#contact {
     text-align: center;
+    padding: 2rem 0;
+    animation: gradient 10s ease infinite;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
 }
 
-footer p {
-    margin: 0;
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    animation: neonGlows 1.5s infinite alternate;
 }
 
-footer .socials a img {
-    width: 30px;
-    height: 30px;
-    margin: 0 0.5rem;
-    transition: transform 0.3s ease;
+#contact p {
+    font-size: 1rem;
+    color: #f3e600;
+    margin-bottom: 2rem;
 }
 
-footer .socials a img:hover {
-    transform: scale(1.2);
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(20, 20, 50, 0.85);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #00ffea;
+    animation: borderPulsate 3s infinite;
+}
+
+form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #00ffea;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+form .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 2px solid #00ffea;
+    color: #00ffea;
+    background: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form .btn:hover {
+    background-color: #00ffea;
+    color: #000000;
+}
+
+@keyframes borderPulsate {
+    0%, 100% {
+        border-color: #00f5ff;
+    }
+    50% {
+        border-color: #6a00ff;
+    }
+}
+
+@keyframes neonGlows {
+    0%, 100% {
+        text-shadow: 0 0 5px #00f5ff, 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 40px #00f5ff, 0 0 80px #00f5ff;
+    }
+    50% {
+        text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 40px #00f5ff, 0 0 80px #00f5ff, 0 0 160px #00f5ff;
+    }
 }
 
 @media (max-width: 768px) {
@@ -148,20 +213,10 @@ footer .socials a img:hover {
         height: 120px;
     }
 
-    #hero h2 {
-        font-size: 2rem;
-    }
-
-    #hero p {
-        font-size: 1rem;
-    }
-
     .container {
         width: 95%;
     }
-}
 
-@media (max-width: 480px) {
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -171,81 +226,46 @@ footer .socials a img:hover {
         margin: 0.5rem 0;
     }
 
+    form {
+        padding: 1rem;
+    }
+
+    form input, form textarea {
+        padding: 0.5rem;
+    }
+
+    form .btn {
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
     header img {
         width: 100px;
         height: 100px;
     }
 
-    #hero h2 {
-        font-size: 1.5rem;
-    }
-
-    #hero p {
-        font-size: 0.9rem;
-    }
-
     .container {
         width: 100%;
     }
-}
 
-#hero {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    padding: 4rem 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-#hero h2 {
-    font-size: 2.5rem;
-    color: #00f5ff;
-    text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 30px #00f5ff;
-}
-
-#hero p {
-    font-size: 1.2rem;
-    color: #f3e600;
-}
-
-#hero .btn {
-    background-color: #6a00ff;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 1rem;
-    animation: glitch 4s ease infinite;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#hero .btn:hover {
-    background-color: #00b8ff;
-    transform: translateY(-3px);
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-@keyframes glitch {
-    0% {
-        text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #ff00ff;
+    header h1 {
+        font-size: 1.5rem;
     }
-    20% {
-        text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffea;
+
+    header p {
+        font-size: 1rem;
     }
-    40% {
-        text-shadow: 2px -2px 0px #00ffea, -2px 2px 0px #ff00ff;
+
+    form {
+        padding: 0.5rem;
     }
-    60% {
-        text-shadow: -2px 2px 0px #ff00ff, 2px -2px 0px #00ffea;
+
+    form input, form textarea {
+        padding: 0.5rem;
     }
-    80% {
-        text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #ff00ff;
-    }
-    100% {
-        text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffea;
+
+    form .btn {
+        padding: 0.5rem 1rem;
     }
 }
